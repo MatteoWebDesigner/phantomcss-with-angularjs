@@ -1,1 +1,4 @@
-# phantomcss-with-angularjs
+# README
+
+run server
+> npm start
