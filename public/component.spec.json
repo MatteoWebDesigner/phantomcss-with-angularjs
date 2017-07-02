@@ -1,0 +1,6 @@
+{
+	"mockData": {
+		"message": "mock-message"
+	},
+	"template": "<component message=\"message\"></component>"
+}

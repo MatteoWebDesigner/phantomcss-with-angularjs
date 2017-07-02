@@ -13,10 +13,29 @@ casper.test.begin("First test", function (test) {
 
 	casper.viewport(1024, 768);
 	
+	/// page visual test START ///
+	casper.thenOpen('http://localhost:8080/');
+	
+	casper.waitUntilVisible("body", function() {
+		casper.then(function() {
+			phantomcss.screenshot("body", "body");
+		});
+	});
+	/// page visual test END ///
+
+	/// component visual unit test START ///
+	casper.thenOpen("http://localhost:8080/visual-unit-test/component");
+	
+	casper.waitUntilVisible("body", function() {
+		casper.then(function() {
+			phantomcss.screenshot("body", "body");
+		});
+	});
+	
 	casper.waitUntilVisible(".component", function() {
 		
 		casper.then(function() {
-			phantomcss.screenshot(".component", "first component");
+			phantomcss.screenshot(".component", "component");
 		});
 		
 		casper.then(function() {
@@ -25,6 +44,7 @@ casper.test.begin("First test", function (test) {
 			phantomcss.screenshot(".component", "component open");
 		});
 	});
+	/// component visual unit test END ///
 	
 	casper.then(function now_check_the_screenshots() {
 		phantomcss.compareAll();

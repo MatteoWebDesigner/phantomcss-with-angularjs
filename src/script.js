@@ -16,7 +16,7 @@
 		
 		var visualUnitTestState = {
 			name: "visualUnitTest",
-			url: "/visualUnitTest/{componentName}",
+			url: "/visual-unit-test/{componentName}",
 			controllerAs: "$ctrl",
 			controller: class VisualUnitTest {
 				constructor($element, $stateParams, $compile, $scope, $http) {

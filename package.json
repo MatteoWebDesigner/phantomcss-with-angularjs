@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server-spa ./public",
-    "build": "babel src -d public",
-    "test": "casperjs test visual-test/test.js",
+    "build": "babel src -d public; ./copy.sh",
+    "test": "casperjs --verbose --log-level=debug test visual-test/test.js",
     "test-validate": "npm test -- --rebase"
   },
   "repository": {
@@ -26,7 +26,6 @@
     "fs": "0.0.1-security",
     "http-server-spa": "^1.2.0",
     "phantomcss": "^1.1.5",
-    "phantomjs-prebuilt": "^2.1.14",
-    "slimerjs": "^0.10.3"
+    "phantomjs-prebuilt": "^2.1.14"
   }
 }

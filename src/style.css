@@ -1,0 +1,28 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+.component {
+	width: 300px;
+	padding: 5px;
+	border: 1px solid black;
+	background: orange;
+	color: white;
+}
+
+.component__btn {
+	height: 30px;
+	padding: auto 40px;
+	background: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.component__block {
+	margin-top: 15px;
+	padding: 5px;
+	background: blue;
+	color: tomato;
+}
