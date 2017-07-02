@@ -13,8 +13,17 @@ casper.test.begin("First test", function (test) {
 
 	casper.viewport(1024, 768);
 	
-	casper.wait(1000, function() {
-	    phantomcss.screenshot("body", "first component");
+	casper.waitUntilVisible(".component", function() {
+		
+		casper.then(function() {
+			phantomcss.screenshot(".component", "first component");
+		});
+		
+		casper.then(function() {
+			casper.click(".component button");
+			
+			phantomcss.screenshot(".component", "component open");
+		});
 	});
 	
 	casper.then(function now_check_the_screenshots() {
